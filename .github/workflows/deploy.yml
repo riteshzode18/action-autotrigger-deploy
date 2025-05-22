@@ -1,0 +1,14 @@
+name: deploy
+
+on:
+  workflow_run:
+    workflows: ["build and test"]
+    types:
+      - completed
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo deploy
+        run: echo deploy
